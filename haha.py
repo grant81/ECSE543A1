@@ -8,6 +8,7 @@ OCt 17th, 2016
 
 #using the top right quater of the cable, due to symmetry
 import math
+import numpy as np
 #######################################################################################################
 #Generates the initial mesh, taking into considering the boundary conditions
 def genMesh (h):
@@ -123,6 +124,7 @@ for w in range (10,20,1):
     w = float(w/10)
     h = 0.02
     initialMesh = (genMesh(h))
+    initialM  = np.array(initialMesh)
     finalMesh = numIteration(initialMesh,h,w,'s')
     print ('Potential: ' + str(getPot(finalMesh,x,y,h)) + ' V')
     print('')
